@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useParams, Link } from 'react-router-dom';
-import ChordBlock from '@tombatossals/react-chords/lib/Chord/ChordBlock'
+import { ChordBlock, addMidiToPosition } from '@tombatossals/react-chords'
 import guitarChords from '@tombatossals/chords-db/lib/guitar.json';
 import ukuleleChords from '@tombatossals/chords-db/lib/ukulele.json';
 import pianoChords from '@tombatossals/chords-db/lib/piano.json';
-import { addMidiToPosition } from '@tombatossals/react-chords/lib/Chord/midiUtils';
 import './App.css';
 
 const instruments = {

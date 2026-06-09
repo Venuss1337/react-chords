@@ -3,43 +3,85 @@
   "description": "React library to easily render instrument chord diagrams",
   "version": "1.1.0",
   "private": false,
-  "devDependencies": {
-    "@babel/cli": "^7.6.4",
-    "@babel/core": "^7.6.4",
-    "@babel/node": "^7.6.3",
-    "@babel/preset-env": "^7.6.3",
-    "@babel/preset-react": "^7.24.7",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "standard": "^17.1.2"
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./Chord": {
+      "types": "./dist/types/Chord/index.d.ts",
+      "import": "./dist/esm/Chord/index.js",
+      "require": "./dist/cjs/Chord/index.js"
+    },
+    "./ChordBlock": {
+      "types": "./dist/types/Chord/ChordBlock/index.d.ts",
+      "import": "./dist/esm/Chord/ChordBlock/index.js",
+      "require": "./dist/cjs/Chord/ChordBlock/index.js"
+    },
+    "./midiUtils": {
+      "types": "./dist/types/Chord/midiUtils.d.ts",
+      "import": "./dist/esm/Chord/midiUtils.js",
+      "require": "./dist/cjs/Chord/midiUtils.js"
+    },
+    "./lib/Chord/ChordBlock": {
+      "types": "./dist/types/Chord/ChordBlock/index.d.ts",
+      "import": "./dist/esm/Chord/ChordBlock/index.js",
+      "require": "./dist/cjs/Chord/ChordBlock/index.js"
+    },
+    "./lib/Chord/midiUtils": {
+      "types": "./dist/types/Chord/midiUtils.d.ts",
+      "import": "./dist/esm/Chord/midiUtils.js",
+      "require": "./dist/cjs/Chord/midiUtils.js"
+    },
+    "./package.json": "./package.json"
   },
-  "dependencies": {
-    "prop-types": "^15.7.2"
-  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
   "scripts": {
-    "build": "babel src --out-dir lib",
-    "standard": "standard src"
+    "clean": "node scripts/clean.cjs",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs && npm run build:types && node scripts/write-package-types.cjs",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:types": "tsc -p tsconfig.types.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "npm run typecheck",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tombatossals/react-chords.git"
+    "url": "git+https://github.com/Venuss1337/react-chords.git"
   },
   "keywords": [
     "svg",
     "react",
-    "javascript",
+    "typescript",
     "chords",
     "guitar",
-    "ukelele"
+    "ukulele"
   ],
   "author": "David Rubert",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tombatossals/react-chords/issues"
+    "url": "https://github.com/Venuss1337/react-chords/issues"
   },
   "homepage": "https://tombatossals.github.io/react-chords",
   "peerDependencies": {
     "react": ">=16.8.0 || ^17 || ^18 || ^19",
     "react-dom": ">=16.8.0 || ^17 || ^18 || ^19"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "typescript": "^6.0.3"
   }
 }
