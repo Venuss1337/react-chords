@@ -46,7 +46,7 @@ const Neck = ({ tuning, frets, strings, fretsOnChord, baseFret = 1, capo, lite =
   return (
     <g>
       <path
-        stroke='#444'
+        stroke='inherit'
         strokeWidth='0.25'
         strokeLinecap='square'
         strokeLinejoin='miter'
@@ -55,7 +55,7 @@ const Neck = ({ tuning, frets, strings, fretsOnChord, baseFret = 1, capo, lite =
       {baseFret === 1
         ? (
           <path
-            stroke='#444'
+            stroke='inherit'
             strokeWidth='2'
             strokeLinecap='round'
             strokeLinejoin='round'
@@ -65,7 +65,7 @@ const Neck = ({ tuning, frets, strings, fretsOnChord, baseFret = 1, capo, lite =
         : (
           <text
             fontSize='0.25rem'
-            fill='#444'
+            fill='currentColor'
             fontFamily='Verdana'
             x={getBarreOffset(strings, frets, baseFret, capo)}
             y='8'
@@ -79,7 +79,7 @@ const Neck = ({ tuning, frets, strings, fretsOnChord, baseFret = 1, capo, lite =
             <text
               key={index}
               fontSize='0.3rem'
-              fill='#444'
+              fill='currentColor'
               fontFamily='Verdana'
               textAnchor='middle'
               x={offset.x + index * 10}

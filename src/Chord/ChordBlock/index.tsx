@@ -60,7 +60,7 @@ const ChordBlock = ({ instrument, position, name }: ChordBlockProps) => {
             className='cursor-pointer border border-gray-300 rounded-full w-6 h-6 flex items-center justify-center bg-gray-100 hover:bg-gray-200'
           >
             <svg width='12' height='12' viewBox='0 0 10 10'>
-              <path d='M 2 1 L 2 9 L 8 5 Z' fill='#444' />
+              <path d='M 2 1 L 2 9 L 8 5 Z' fill='currentColor' />
             </svg>
           </button>
         )}

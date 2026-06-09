@@ -1,3 +1,5 @@
+import type { CSSProperties } from 'react'
+
 export type NoteName =
   | 'A'
   | 'Ab'
@@ -69,6 +71,8 @@ export interface ChordProps {
   chord?: ChordShape | null
   instrument: Instrument
   lite?: boolean
+  className?: string
+  style?: CSSProperties
 }
 
 export interface ChordBlockProps {

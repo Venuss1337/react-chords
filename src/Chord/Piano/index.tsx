@@ -39,7 +39,7 @@ const Piano = ({ chord, lite = false }: PianoProps) => {
               width={10}
               height={48}
               fill={isPressed ? '#e5e7eb' : '#ffffff'}
-              stroke='#444'
+              stroke='inherit'
               strokeWidth='0.25'
             />
             {isPressed && (
@@ -74,7 +74,7 @@ const Piano = ({ chord, lite = false }: PianoProps) => {
               width={6}
               height={30}
               fill={isPressed ? '#e5e7eb' : '#000000'}
-              stroke='#444'
+              stroke='inherit'
               strokeWidth='0.25'
             />
             {isPressed && (
@@ -93,7 +93,7 @@ const Piano = ({ chord, lite = false }: PianoProps) => {
         )
       })}
       {!lite && chord.octave && (
-        <text fontSize='0.3rem' fill='#444' fontFamily='Verdana' x={-12} y={24}>
+        <text fontSize='0.3rem' fill='currentColor' fontFamily='Verdana' x={-12} y={24}>
           Octave: {chord.octave}
         </text>
       )}

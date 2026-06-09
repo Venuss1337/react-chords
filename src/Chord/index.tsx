@@ -18,7 +18,7 @@ const isStringChord = (chord: ChordProps['chord']): chord is StringChord =>
 const isStringInstrument = (instrument: ChordProps['instrument']): instrument is StringInstrument =>
   instrument.name !== 'Piano'
 
-const Chord = ({ chord, instrument, lite = false }: ChordProps) => {
+const Chord = ({ chord, instrument, lite = false, className, style }: ChordProps) => {
   if (!chord?.frets) {
     return null
   }
@@ -26,10 +26,15 @@ const Chord = ({ chord, instrument, lite = false }: ChordProps) => {
   if (isPianoChord(chord, instrument)) {
     return (
       <svg
+        className={className}
         width='100%'
+        height='auto'
         xmlns='http://www.w3.org/2000/svg'
         preserveAspectRatio='xMinYMin meet'
         viewBox='0 0 80 70'
+        color='#444'
+        stroke='#444'
+        style={style}
       >
         <g transform='translate(5, 13)'>
           <Piano chord={chord} lite={lite} />
@@ -44,10 +49,15 @@ const Chord = ({ chord, instrument, lite = false }: ChordProps) => {
 
   return (
     <svg
+      className={className}
       width='100%'
+      height='auto'
       xmlns='http://www.w3.org/2000/svg'
       preserveAspectRatio='xMinYMin meet'
       viewBox='0 0 80 70'
+      color='#444'
+      stroke='#444'
+      style={style}
     >
       <g transform='translate(13, 13)'>
         <Neck

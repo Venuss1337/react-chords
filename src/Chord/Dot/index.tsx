@@ -32,7 +32,7 @@ const Dot = ({ string, fret = 0, finger, strings, lite = false }: DotProps) =>
     ? (
       <text
         fontSize='0.7rem'
-        fill='#444'
+        fill='currentColor'
         fontFamily='Verdana'
         textAnchor='middle'
         x={getStringPosition(string, strings)}
@@ -45,8 +45,8 @@ const Dot = ({ string, fret = 0, finger, strings, lite = false }: DotProps) =>
       <g>
         <circle
           strokeWidth='0.25'
-          stroke='#444'
-          fill={fret === 0 ? 'transparent' : '#444'}
+          stroke='inherit'
+          fill={fret === 0 ? 'transparent' : 'currentColor'}
           cx={getStringPosition(string, strings)}
           cy={positions.fret[fret]}
           r={fret === 0 ? radius.open : radius.fret}

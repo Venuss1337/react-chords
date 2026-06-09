@@ -60,13 +60,13 @@ const Barre = ({ barre, frets, capo, finger, lite = false }: BarreProps) => {
                 m -4, 0
                 a 4,4 0 1,1 8,0
               `}
-              fill='#555'
+              fill='currentColor'
               fillOpacity={0.2}
               transform='rotate(-90)'
             />
           </g>
           <rect
-            fill='#555'
+            fill='currentColor'
             x={xPositions[0]}
             y={fretYPosition[barre - 1]}
             width={(strings - 1) * 10}
@@ -82,7 +82,7 @@ const Barre = ({ barre, frets, capo, finger, lite = false }: BarreProps) => {
                 m -4, 0
                 a 4,4 0 1,1 8,0
               `}
-              fill='#555'
+              fill='currentColor'
               fillOpacity={0.2}
               transform='rotate(90)'
             />
@@ -93,15 +93,15 @@ const Barre = ({ barre, frets, capo, finger, lite = false }: BarreProps) => {
         <circle
           key={fret.position}
           strokeWidth='0.25'
-          stroke='#444'
-          fill='#444'
+          stroke='inherit'
+          fill='currentColor'
           cx={getStringPosition(strings - fret.position, strings)}
           cy={positions.fret[fret.value]}
           r={4}
         />
       ))}
       <rect
-        fill='#444'
+        fill='currentColor'
         x={xPositions[string1]}
         y={y}
         width={width}
